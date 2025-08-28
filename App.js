@@ -7,6 +7,7 @@ import {
   TextInput,
   TouchableOpacity,
   View,
+  ScrollView,
 } from "react-native";
 import styles from "./styles";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -105,10 +106,89 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+      <View style={styles.container}>
+        <Text style={styles.tituloPrincipal}>
+          Create a user registration, persisting data on the device
+        </Text>
+        <View style={{ width: '80%' }}>
+          {/* Personal Code */}
+          <Text style={styles.legendaNome}>Code</Text>
+          <TextInput
+            style={[styles.campoNome, { backgroundColor: '#f5edc2', marginBottom: 15 }]}
+            placeholder="Enter code"
+            keyboardType="numeric"
+            value={personalCode}
+            onChangeText={setPersonalCode}
+          />
+          {/* Full Name */}
+          <Text style={styles.legendaNome}>Name</Text>
+          <TextInput
+            style={[styles.campoNome, { backgroundColor: '#f5edc2', marginBottom: 15 }]}
+            placeholder="Enter name"
+            value={fullName}
+            onChangeText={setFullName}
+          />
+          {/* Email */}
+          <Text style={styles.legendaNome}>Email</Text>
+          <TextInput
+            style={[styles.campoNome, { backgroundColor: '#f5edc2', marginBottom: 15 }]}
+            placeholder="Enter email"
+            keyboardType="email-address"
+            value={email}
+            onChangeText={setEmail}
+          />
+          {/* Password and Confirm Password */}
+          <View style={styles.areaCadastro}>
+            <View style={styles.areaNome}>
+              <Text style={styles.legendaNome}>Password</Text>
+              <TextInput
+                style={[styles.campoNome, { backgroundColor: '#f5edc2', textAlign: 'center' }]}
+                placeholder="****"
+                secureTextEntry
+                value={password}
+                onChangeText={setPassword}
+              />
+            </View>
+            <View style={styles.areaNome}>
+              <Text style={styles.legendaNome}>Confirm password</Text>
+              <TextInput
+                style={[styles.campoNome, { backgroundColor: '#f5edc2', textAlign: 'center' }]}
+                placeholder="****"
+                secureTextEntry
+                value={confirmPassword}
+                onChangeText={setConfirmPassword}
+              />
+            </View>
+          </View>
+          {/* Buttons */}
+          <View style={styles.areaBotoes}>
+            <TouchableOpacity style={styles.botaoSalvar} onPress={save}>
+              <Text style={styles.legendaBotao}>Save</Text>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.botaoCarregar} onPress={load}>
+              <Text style={styles.legendaBotao}>Load</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={{ marginTop: 20, alignItems: 'center' }}>
+            <TouchableOpacity style={styles.botaoCarregar} onPress={clearFields}>
+              <Text style={styles.legendaBotao}>Clear</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        {/* Validation rules */}
+        <View style={{ position: 'absolute', right: 20, top: 100, width: 250 }}>
+          <Text style={{ fontWeight: 'bold', fontSize: 18, marginBottom: 10 }}>Validations:</Text>
+          <Text style={{ fontSize: 15 }}>- Code must be &gt; 0{"\n"}
+            - Name is required{"\n"}
+            - Email must be valid (use regex){"\n"}
+            - Password and confirmation must match{"\n"}
+            - Password must have at least 1 uppercase letter, 1 number, and at least 5 characters.
+          </Text>
+        </View>
+        <StatusBar style="auto" />
+      </View>
+    </ScrollView>
   );
 }
 

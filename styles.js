@@ -1,98 +1,122 @@
-import { StyleSheet } from "react-native";
-
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#f6f8fa",
     alignItems: "center",
     justifyContent: "center",
+    minHeight: 600,
+    paddingTop: 40,
+    paddingBottom: 40,
   },
-  legendaNome: {
-    fontSize: 21,
-    fontWeight: "bold",
-  },
-  legendaTelefone: {
-    fontSize: 21,
-    fontWeight: "bold",
-  },
-  tituloPrincipal: {
-    fontSize: 25,
+  mainTitle: {
+    fontSize: 28,
     fontWeight: "bold",
     width: "90%",
-    backgroundColor: "#196e50",
-    padding: 5,
-    height: 50,
+    backgroundColor: "#2dce89",
+    padding: 12,
     textAlign: "center",
-    color: "#FFF",
-    borderRadius: 5,
+    color: "#fff",
+    borderRadius: 16,
     marginBottom: 40,
+    elevation: 4,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
   },
-  campoNome: {
+  label: {
     fontSize: 18,
+    fontWeight: "600",
+    marginBottom: 6,
+    color: "#22223b",
+  },
+  input: {
+    fontSize: 17,
     width: '100%',
-    height: 50,
-    borderBottomWidth: 5,
-    borderBottomColor: "#032b1d",
+    height: 48,
+    borderRadius: 12,
+    borderWidth: 1.5,
+    borderColor: "#b5c0d0",
+    backgroundColor: '#fff',
+    marginBottom: 18,
+    paddingHorizontal: 16,
+    color: "#22223b",
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.08,
+    shadowRadius: 4,
   },
-
-  campoTelefone: {
-    fontSize: 18,
-    width: '100%',
-    height: 50,
-    borderBottomWidth: 5,
-    borderBottomColor: "#032b1d",
-  },
-  botaoSalvar: {
-    width: "40%",
-    height: 50,
-    borderRadius: 10,
-    backgroundColor: "#164cb8",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-
-  botaoCarregar: {
-    width: "40%",
-    height: 50,
-    borderRadius: 10,
-    backgroundColor: "#717785",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  legendaBotao: {
-    fontSize: 21,
-    fontWeight: "bold",
-    color: "#FFF",
-  },
-
-  areaBotoes: {
-    marginTop: 40,
+  formRow: {
     flexDirection: "row",
-    justifyContent: "space-around",
     width: "100%",
+    justifyContent: 'space-between',
+    marginBottom: 10,
   },
-
-  imagem:{
-     width: 100,
-     height: 100,
-  },
-
-  areaCadastro: {
-    flexDirection: "row",
-    width: "100%",    
-    justifyContent: 'space-around',
-  },
-  areaNome:{
-    width: '48%',    
-    alignItems: 'center',
-  },
-  areaTelefone:{
+  formCol: {
     width: '48%',
     alignItems: 'center',
   },
-  iconeLimpar:{
-    fontSize: 40,
-  }
+  buttonRow: {
+    marginTop: 36,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    width: "100%",
+  },
+  button: {
+    width: "48%",
+    height: 48,
+    borderRadius: 12,
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#2dce89",
+    elevation: 2,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 1 },
+    shadowOpacity: 0.10,
+    shadowRadius: 4,
+    marginBottom: 0,
+  },
+  buttonSecondary: {
+    backgroundColor: "#5e60ce",
+  },
+  buttonText: {
+    fontSize: 18,
+    fontWeight: "bold",
+    color: "#fff",
+    letterSpacing: 1,
+  },
+  clearButtonWrapper: {
+    marginTop: 24,
+    alignItems: 'center',
+  },
+  validationBox: {
+    position: 'absolute',
+    right: 24,
+    top: 110,
+    width: 270,
+    backgroundColor: '#fff',
+    borderRadius: 12,
+    padding: 18,
+    elevation: 3,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.10,
+    shadowRadius: 8,
+    borderWidth: 1,
+    borderColor: '#e0e0e0',
+  },
+  validationTitle: {
+    fontWeight: 'bold',
+    fontSize: 18,
+    marginBottom: 10,
+    color: '#2dce89',
+  },
+  validationText: {
+    fontSize: 15,
+    color: '#22223b',
+    lineHeight: 22,
+  },
 });
 
 export default styles;
